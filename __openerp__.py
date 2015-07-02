@@ -30,10 +30,12 @@ Todos los datos por defecto.
     """,
     'author': 'Filoquin',
     'website': 'http://sipecu.com.ar',
-    'depends': ['base','product'],
+    'depends': ['base','product','sale'],
     'installable': True,
     'data': [
         'product_template.xml',
+        'sale_order.xml',
+
     ],
     'auto_install': False,
 }

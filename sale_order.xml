@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="blancoamor_view_order_form">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <data>
+            <xpath expr="//field[@name='price_unit']" position="replace">
+                <field name="price_unit" readonly="1"/>
+            </xpath>
+
+            </data> 
+        </field>
+    </record>
+    </data>
+</openerp>
+
