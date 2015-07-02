@@ -26,7 +26,6 @@ import re
 
 class res_partner(osv.osv):
     _inherit = 'res.partner'
-    _columns = {}
 
     _defaults = {
         'property_account_receivable': 23,
