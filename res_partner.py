@@ -19,19 +19,20 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
+
+from openerp.osv import fields, osv
 from openerp.tools.translate import _
+import re
 
-
-
-class res_partner(orm.Model):
+class res_partner(osv.osv):
     _inherit = 'res.partner'
+    _columns = {}
 
     _defaults = {
         'property_account_receivable': 23,
         'property_account_payable': 84,
     }
 
-
+res_partner()
 
 
