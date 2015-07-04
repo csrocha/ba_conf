@@ -22,11 +22,11 @@
                     </div>                        
                 </div>
                 <div class="col-xs-5 col-xs-offset-1">
-                    <h2>
+                    <p style="font-size:14px;"><strong>
                         <span t-if="o.state not in ['draft','sent']">Order N° </span>
                         <span t-if="o.state in ['draft','sent']">Quotation N° </span>
                         <span t-field="o.name"/>
-                    </h2>
+                    </strong></p>
                         <span t-field="o.user_id.image_small" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}" />
                         <span t-field="o.user_id.name"/>
                   
@@ -39,7 +39,7 @@
                     <strong>Your Reference:</strong>
                     <p t-field="o.client_order_ref"/>
                 </div>
-                <div t-if="o.date_order" class="col-xs-2">
+                <div t-if="o.date_order" class="col-xs-3">
                     <strong t-if="o.state not in ['draft','sent']">Date Ordered:</strong>
                     <strong t-if="o.state in ['draft','sent']">Quotation Date:</strong>
                     <p t-field="o.date_order"/>
