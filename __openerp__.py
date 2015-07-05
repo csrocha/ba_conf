@@ -25,8 +25,8 @@
     'version': '0.1',
     'category': 'Las distintas configuraciones de Blancoamor',
     'description': """
-Todos los datos por defecto.
-=======================
+Todos los datos por defecto y formato de los reportes
+======================
     """,
     'author': 'Filoquin',
     'website': 'http://sipecu.com.ar',
@@ -36,6 +36,7 @@ Todos los datos por defecto.
         'product_template.xml',
         'sale_order.xml',
         'report/report_saleorder.xml',
+        'views/layouts.xml',
 
     ],
     'auto_install': False,
