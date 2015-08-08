@@ -1,0 +1,206 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ba_conf
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-07 01:26+0000\n"
+"PO-Revision-Date: 2015-08-06 22:31-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: ba_conf
+#: view:account.journal.section.wizard:ba_conf.journal_section_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: ba_conf
+#: field:account.journal.section.wizard,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ba_conf
+#: field:account.journal.section.wizard,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Date Ordered:"
+msgstr "Fecha pedido:"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Disc.(%)"
+msgstr "Desc.(%)"
+
+#. module: ba_conf
+#: field:account.journal.section.wizard,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: ba_conf
+#: model:ir.model,name:ba_conf.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: ba_conf
+#: model:ir.ui.menu,name:ba_conf.menu_action_journal_invoice_ar_installer
+msgid "Invoice Configuration"
+msgstr "Configuracion de puntos"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Invoice address:"
+msgstr "Dirección de facturación:"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Invoice and shipping address:"
+msgstr "Dirección de facturación y de envío:"
+
+#. module: ba_conf
+#: model:ir.model,name:ba_conf.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: ba_conf
+#: model:ir.actions.act_window,name:ba_conf.journal_section_action
+#: model:ir.ui.menu,name:ba_conf.menu_journal_section_action
+msgid "Journal by section"
+msgstr "Diario por equipo"
+
+#. module: ba_conf
+#: field:account.journal.section.wizard,write_uid:0
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: ba_conf
+#: field:account.journal.section.wizard,write_date:0
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Order N°"
+msgstr "Orden Nº"
+
+#. module: ba_conf
+#: model:ir.model,name:ba_conf.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Payment Term:"
+msgstr "Plazo de pago:"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Price"
+msgstr "Precio"
+
+#. module: ba_conf
+#: field:sale.order.line,product_description:0
+msgid "Product Description"
+msgstr "Product Description"
+
+#. module: ba_conf
+#: field:sale.order.line,product_image:0
+msgid "Product Image"
+msgstr "Product Image"
+
+#. module: ba_conf
+#: field:account.journal.section.wizard,point_of_sale:0
+msgid "Punto de venta"
+msgstr "Punto de venta"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Quotation Date:"
+msgstr "Fecha de presupuesto:"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Quotation N°"
+msgstr "Cotización Nº"
+
+#. module: ba_conf
+#: model:ir.model,name:ba_conf.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Líneas de Pedido de Venta"
+
+#. module: ba_conf
+#: field:account.journal,section_id:0
+#: field:account.journal.section.wizard,section_id:0
+msgid "Sales Team"
+msgstr "Equipo de venta"
+
+#. module: ba_conf
+#: view:account.journal.section.wizard:ba_conf.journal_section_wizard
+msgid "Set Section"
+msgstr "Definir seccion"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Shipping address:"
+msgstr "Dirección de envío:"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Total"
+msgstr "Total"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Total Without Taxes"
+msgstr "Total sin impuestos"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "VAT:"
+msgstr "IVA:"
+
+#. module: ba_conf
+#: view:website:sale.report_saleorder_document
+msgid "Your Reference:"
+msgstr "Su referencia:"
+
+#. module: ba_conf
+#: model:ir.actions.act_window,name:ba_conf.action_journal_section_wizard
+#: model:ir.ui.menu,name:ba_conf.menu_action_journal_section_wizard
+msgid "journal by section wizard"
+msgstr "Asistente de diario por equpo"
+
+#. module: ba_conf
+#: view:account.journal:ba_conf.journal_section_form_view
+#: view:account.journal:ba_conf.journal_section_tree_view
+msgid "journal_section"
+msgstr "journal_section"

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+        <menuitem id="base.menu_journal_section" name="journal by sections" parent="base.menu_config" sequence="20"/>
+
+        <record id="journal_section_tree_view" model="ir.ui.view">
+            <field name="name">account.journal.tree</field>
+            <field name="model">account.journal</field>
+            <field name="arch" type="xml">
+                <tree string="journal_section">
+                    <field name="name"/>
+                    <field name="section_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="journal_section_form_view" model="ir.ui.view">
+            <field name="name">account.journal.common.form</field>
+            <field name="model">account.journal</field>
+            <field name="arch" type="xml">
+                <form string="journal_section">
+                    <sheet>
+                        <field name="id" invisible="True"/>
+                        <field name="name"/>
+                        <field name="section_id"/>
+                    </sheet>
+             
+                </form>
+            </field>
+        </record>
+
+
+
+       <record id="journal_section_action" model="ir.actions.act_window">
+            <field name="name">Journal by section</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.journal</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="journal_section_tree_view"/>
+        </record>
+
+        <menuitem action="journal_section_action"
+            id="menu_journal_section_action"
+            parent="base.menu_journal_section" sequence="1" />
+
+        <record id="journal_section_wizard" model="ir.ui.view">
+            <field name="name">Acount section Wizard</field>
+            <field name="model">account.journal.section.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                      <field name="section_id"/>
+                      <field name="point_of_sale" />
+                        <footer>
+                            <button type="object"   name="do_set_section"   string="Set Section" class="oe_highlight" />
+                            <button special="cancel" string="Cancel"/>
+                       </footer>
+
+                </form>
+            </field>
+        </record>
+    <record id="action_journal_section_wizard" model="ir.actions.act_window">
+      <field name="name">journal by section wizard</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">account.journal.section.wizard</field>
+      <field name="view_id" ref="journal_section_wizard"/>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
+
+
+
+
+    <menuitem action="action_journal_section_wizard"
+            id="menu_action_journal_section_wizard"
+            parent="base.menu_journal_section" sequence="2" />
+            
+    <menuitem action="l10n_ar_invoice.action_invoice_ar_installer"
+            id="menu_action_journal_invoice_ar_installer"
+            parent="base.menu_journal_section" sequence="3" />
+
+
+
+
+
+
+</data>
+</openerp>

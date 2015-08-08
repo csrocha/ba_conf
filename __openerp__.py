@@ -30,13 +30,14 @@ Todos los datos por defecto y formato de los reportes
     """,
     'author': 'Filoquin',
     'website': 'http://sipecu.com.ar',
-    'depends': ['base','product','sale','report'],
+    'depends': ['base','product','sale','report','account'],
     'installable': True,
     'data': [
         'product_template.xml',
         'sale_order.xml',
         'report/report_saleorder.xml',
         'views/layouts.xml',
+        'views/account_journal.xml',
 
     ],
     'auto_install': False,
