@@ -8,7 +8,7 @@ class sale_order_line(osv.osv):
 
     _columns = {
 
-        'product_image': fields.related('product_id', 'image_medium', type='binary',relation="product.product" ,readonly=True , string='Product Image'),
-        'product_description': fields.related('product_id', 'description', type='text',relation="res.user",readonly=True ,  string='Product Description'),
+        'product_image': fields.related('product_id', 'image_medium', type='binary',relation="product.template" ,readonly=True , string='Product Image'),
+        'product_description': fields.related('product_id', 'description', type='text',relation="product.template",readonly=True ,  string='Product Description'),
     }
 sale_order_line()

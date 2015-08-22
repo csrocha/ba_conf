@@ -32,6 +32,13 @@ class res_partner(osv.osv):
         'property_account_payable': 84,
     }
 
+    def create(self, cr, uid, vals, context=None):
+        if  vals['is_company']==0 and not hasattr(vals,'lastname'):
+            vals['lastname']=vals['name']
+
+        return super(res_partner, self).create(cr, uid, vals, context)
+
+
 res_partner()
 
 
