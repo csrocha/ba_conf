@@ -30,5 +30,5 @@ class account_journal_section_wizard(osv.osv_memory):
             cr.execute("""update account_journal set section_id=%s where point_of_sale=%s """,
                        (journal['section_id'][0],journal['point_of_sale']))
 
-            return  True
+            return  {}
 

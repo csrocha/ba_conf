@@ -38,6 +38,7 @@ Todos los datos por defecto y formato de los reportes
         'report/report_saleorder.xml',
         'views/layouts.xml',
         'views/account_journal.xml',
+        'security/ba_conf_security.xml',
 
     ],
     'auto_install': False,

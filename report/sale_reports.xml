@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="ba_order_total_graph" model="ir.ui.view">
+            <field name="name">account.invoice.graph</field>
+            <field name="model">account.invoice</field>
+            <field name="arch" type="xml">
+                <graph string="Facturas" type="pivot">
+                    <field interval="month" name="datetime" type="row"/>
+                    <field interval="section_id" type="col"/>
+                </graph>
+            </field>
+        </record>
+    
+            </
+        <record id="action_ba_order_total_graph" model="ir.actions.act_window">
+            <field name="name">Facturacion por equipo</field>
+            <field name="res_model">account.invoice.event</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="ba_order_total_graph"/>
+            <field name="context"></field>
+        </record>
+
+        <menuitem action="action_ba_order_total_graph" id="action_ba_order_total_graph" parent="base.report" sequence="3"/>
+    </data>
+</openerp>
