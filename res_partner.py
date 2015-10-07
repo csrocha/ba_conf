@@ -33,7 +33,7 @@ class res_partner(osv.osv):
     }
 
     def create(self, cr, uid, vals, context=None):
-        if  vals['is_company']==0 and not hasattr(vals,'lastname'):
+        if  hasattr(vals,'is_company') and vals['is_company']==0 and not hasattr(vals,'lastname'):
             vals['lastname']=vals['name']
 
         return super(res_partner, self).create(cr, uid, vals, context)

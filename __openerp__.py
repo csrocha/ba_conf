@@ -34,6 +34,7 @@ Todos los datos por defecto y formato de los reportes
     'installable': True,
     'data': [
         'product_template.xml',
+        'res_partner.xml',
         'sale_order.xml',
         'report/report_saleorder.xml',
         'views/layouts.xml',
