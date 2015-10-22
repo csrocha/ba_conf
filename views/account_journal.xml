@@ -15,20 +15,24 @@
         </record>
 
 
+
         <record id="journal_section_form_view" model="ir.ui.view">
-            <field name="name">account.journal.common.form</field>
             <field name="model">account.journal</field>
+            <field name="name">account.journal.section.form</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
             <field name="arch" type="xml">
-                <form string="journal_section">
-                    <sheet>
-                        <field name="id" invisible="True"/>
-                        <field name="name"/>
-                        <field name="section_id"/>
-                    </sheet>
-             
-                </form>
+                <notebook position="inside">
+                    <page string="Section">
+                        <group colspan="2" col="2">
+                            <separator string="Section" colspan="4"/>
+                                <field name="section_id"/>
+                        </group>
+                    </page>
+                </notebook>
             </field>
         </record>
+
+
 
 
 

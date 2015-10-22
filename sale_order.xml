@@ -8,11 +8,36 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <data>
+            <field name="pricelist_id" position="replace">
+                  <field domain="[('type','=','sale')]" name="pricelist_id" groups="product.group_sale_pricelist" on_change="update_prices_combo(pricelist_id,order_line,partner_id)"/>
+            </field>
+
             <xpath expr="//field[@name='price_unit']" position="replace">
                 <field name="price_unit" readonly="1"/>
             </xpath>
 
+            <xpath expr="//field[@name='date_order']" position="replace">
+                <field name="date_order" readonly="1"/>
+            </xpath>
             </data> 
+
+                <field name="user_id" position="replace">
+                </field>
+                <field name="partner_id" position="after">
+                                    <field name="user_id" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'account.group_account_invoice','blancoamor_caja','blancoamor_salesman', 'base.group_sale_salesman_all_leads']}"/>
+                </field>
+        </field>
+    </record>
+
+
+    <record id="view_order_form_validity" model="ir.ui.view">
+        <field name="name">sale.order.form.validity</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_validity.view_order_form_validity"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='date_validity']" position="replace">
+                <field name="date_validity" readonly="1"/>
+            </xpath>
         </field>
     </record>
     </data>
