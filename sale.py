@@ -62,38 +62,23 @@ class sale_order(models.Model):
 
         order_line_obj = self.pool.get('sale.order.line')
 
-        for order_line in order_lines:
-            if order_line[0]==6 :
-                for line in order_line_obj.browse(cr, uid,order_line[2]):
-
-                    price = self.pool.get('product.pricelist').price_get(
+        def get_price(line_id):
+            line = order_line_obj.browse(cr, uid,order_line[1])
+            return self.pool.get('product.pricelist').price_get(
                         cr, uid, [pricelist_id],
                         line.product_id.id, line.product_uom_qty or 1.0,
                         partner_id, {
                             'uom': line.product_uom.id,
                         })[pricelist_id]
 
-                    '''order_line_obj.write(cr, uid, [line.id], {'price_unit': price})'''
-
-                    lines.append((1,line.id,{'price_unit':price}))
-            if order_line[0]==0 :
-                line=order_line[2]
-
-                price = self.pool.get('product.pricelist').price_get(
-                    cr, uid, [pricelist_id],
-                    line['product_id'], line['product_uom_qty'] or 1.0,
-                    partner_id, {
-                        'uom': line['product_uom'],
-                    })[pricelist_id]
-                
-                order_line[2]['price_unit']=price
-                lines.append( order_line)
-
+        lines = [{0: lambda ol: (ol[0], ol[1], dict(ol[2], **{'price_unit': get_price(ol[1])})),
+                  1: lambda ol: (ol[0], ol[1], dict(ol[2], **{'price_unit': get_price(ol[1])})),
+                  6: lambda ol: (1, ol[1], {'price_unit': get_price(ol[1])})
+                  }.get(order_line[0], lambda ol: ol)(order_line)
+                  for order_line in order_lines ]
+                    
         res.value['order_line']=lines
         return res
-
-        return True
-
 
 class sale_order_line(osv.osv):
     _inherit = "sale.order.line"
