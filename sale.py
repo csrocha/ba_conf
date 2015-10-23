@@ -53,23 +53,14 @@ class sale_order(models.Model):
     def update_prices_combo(self, cr,uid, ids, pricelist_id, order_lines,partner_id, context=None):
         context = context or {}
 
-        if not pricelist_id:
-            return {}
-        
-        value = {
-            'currency_id': self.pool.get('product.pricelist').browse(cr, uid, pricelist_id, context=context).currency_id.id
-        }                
-        warning = {
-            'title': _('Pricelisbt Warning!'),
-            'message' : _('If you change the pricelist of this order (and eventually the currency), prices of existing order lines will  be updated.')
-        }
-        if not order_lines or order_lines == [(6, 0, [])]:
-            return {'value': value}
+        res = super(sale_order, self).update_prices_combo(self, cr, uid, ids, pricelist_id, order_lines, partner_id, context=context)
 
+        if not pricelist_id:
+            return res
+        
         lines=[]
 
         order_line_obj = self.pool.get('sale.order.line')
-
 
         for order_line in order_lines:
             if order_line[0]==6 :
@@ -98,8 +89,8 @@ class sale_order(models.Model):
                 order_line[2]['price_unit']=price
                 lines.append( order_line)
 
-        value['order_line']=lines   
-        return {'warning': warning, 'value': value}
+        res.value['order_line']=lines
+        return res
 
         return True
 
